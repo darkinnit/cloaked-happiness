@@ -1,0 +1,21 @@
+[
+{
+  "modid": "cloakedhappiness",
+  "name": "Cloaked Happiness",
+  "description": "Just a mod to experiment with how to mod",
+  "version": "${mod_version}",
+  "mcversion": "${minecraft_version}",
+  "url": "http://www.darkinnit.com",
+  "updateUrl": "",
+  "authorList": [
+    "darkinnit"
+  ],
+  "credits": "darkinnit",
+  "logoFile": "assets/cloakedhappiness/textures/logo/darkinnit-logo.png",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
