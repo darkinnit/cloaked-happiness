@@ -1,5 +1,6 @@
 package com.darkinnit.cloakedhappiness;
 
+import com.darkinnit.cloakedhappiness.configuration.ConfigurationHandler;
 import com.darkinnit.cloakedhappiness.proxy.iProxy;
 import com.darkinnit.cloakedhappiness.reference.Reference;
 import cpw.mods.fml.common.Mod;
@@ -18,14 +19,14 @@ public class cloakedhappiness {
     @Mod.Instance(Reference.MOD_ID)
     public static cloakedhappiness instance;
 
-    @SidedProxy(clientSide = "com.darkinnit.cloakedhappiness.proxy.ClientProxy",
-                serverSide = "com.darkinnit.cloakedhappiness.proxy.ServerProxy")
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS,
+                serverSide = Reference.SERVER_PROXY_CLASS)
     public static iProxy proxy;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-
+        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
     }
 
     @Mod.EventHandler
