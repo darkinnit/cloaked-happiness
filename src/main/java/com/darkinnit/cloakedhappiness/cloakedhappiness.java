@@ -1,6 +1,7 @@
 package com.darkinnit.cloakedhappiness;
 
 import com.darkinnit.cloakedhappiness.handler.ConfigurationHandler;
+import com.darkinnit.cloakedhappiness.init.ModBlocks;
 import com.darkinnit.cloakedhappiness.init.ModItems;
 import com.darkinnit.cloakedhappiness.proxy.iProxy;
 import com.darkinnit.cloakedhappiness.reference.Reference;
@@ -37,6 +38,8 @@ public class cloakedhappiness {
         LogHelper.info("Pre Initialisation Complete!");
 
         ModItems.init();
+
+        ModBlocks.init();
     }
 
     @Mod.EventHandler
