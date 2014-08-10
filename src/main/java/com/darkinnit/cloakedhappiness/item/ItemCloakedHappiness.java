@@ -1,5 +1,6 @@
 package com.darkinnit.cloakedhappiness.item;
 
+import com.darkinnit.cloakedhappiness.creativetab.CreativeTabCH;
 import com.darkinnit.cloakedhappiness.reference.Textures;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -14,6 +15,7 @@ public class ItemCloakedHappiness extends Item {
     public ItemCloakedHappiness()
     {
         super();
+        this.setCreativeTab(CreativeTabCH.CH_TAB);
     }
 
     @Override

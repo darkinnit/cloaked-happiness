@@ -1,5 +1,6 @@
 package com.darkinnit.cloakedhappiness.block;
 
+import com.darkinnit.cloakedhappiness.creativetab.CreativeTabCH;
 import com.darkinnit.cloakedhappiness.reference.Reference;
 import com.darkinnit.cloakedhappiness.reference.Textures;
 import cpw.mods.fml.relauncher.Side;
@@ -16,6 +17,7 @@ public class BlockCloakedHappiness extends Block {
     public BlockCloakedHappiness(Material material)
     {
         super(material);
+        this.setCreativeTab(CreativeTabCH.CH_TAB);
     }
 
     public BlockCloakedHappiness()

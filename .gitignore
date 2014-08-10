@@ -16,6 +16,7 @@ out/
 .gradle/
 eclipse/
 gradle/
+run/
 gradlew
 gradlew.bat
 
