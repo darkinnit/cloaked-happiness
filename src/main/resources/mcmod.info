@@ -3,7 +3,7 @@
   "modid": "cloakedhappiness",
   "name": "Cloaked Happiness",
   "description": "Just a mod to experiment with how to mod",
-  "version": "${mod_version}",
+  "version": "${version}",
   "mcversion": "${minecraft_version}",
   "url": "http://www.darkinnit.com",
   "updateUrl": "",

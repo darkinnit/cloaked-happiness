@@ -9,16 +9,11 @@ import net.minecraft.item.Item;
  * Created by darkinnit on 10/08/14.
  */
 public class CreativeTabCH {
-    public static final CreativeTabs CH_TAB = new CreativeTabs(Reference.MOD_ID) {
+    public static final CreativeTabs CH_TAB = new CreativeTabs(Reference.MOD_ID.toLowerCase()) {
         @Override
         public Item getTabIconItem() {
             return ModItems.cupOfTea;
         }
 
-        @Override
-        public String getTranslatedTabLabel()
-        {
-            return "Cloaked Happiness";
-        }
     };
 }
