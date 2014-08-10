@@ -19,7 +19,7 @@ public class ConfigurationHandler {
     public static void init(File configFile){
         if (configuration == null) {
             configuration = new Configuration(configFile);
-            LogHelper.info("Config was null, loading...");
+            LogHelper.debug("Config was null, loading...");
             loadConfiguration();
         }
 
@@ -29,7 +29,7 @@ public class ConfigurationHandler {
     public void onConfigurationChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event){
         if (event.modID.equalsIgnoreCase(Reference.MOD_ID))
         {
-            LogHelper.info("ConfigChangeEvent detected, loading config...");
+            LogHelper.debug("ConfigChangeEvent detected, loading config...");
             loadConfiguration();
         }
     }
@@ -41,12 +41,12 @@ public class ConfigurationHandler {
                                              true,
                                              "This is an example config value");
         if (configuration.hasChanged()) {
-            LogHelper.info("Configuration has changed, saving config...");
+            LogHelper.debug("Configuration has changed, saving config...");
             configuration.save();
         }
         else
         {
-            LogHelper.info("Configuration has not changed, skipping save.");
+            LogHelper.debug("Configuration has not changed, skipping save.");
         }
     }
 }

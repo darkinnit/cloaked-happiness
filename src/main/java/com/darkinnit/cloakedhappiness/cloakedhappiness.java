@@ -3,6 +3,7 @@ package com.darkinnit.cloakedhappiness;
 import com.darkinnit.cloakedhappiness.handler.ConfigurationHandler;
 import com.darkinnit.cloakedhappiness.init.ModBlocks;
 import com.darkinnit.cloakedhappiness.init.ModItems;
+import com.darkinnit.cloakedhappiness.init.Recipes;
 import com.darkinnit.cloakedhappiness.proxy.iProxy;
 import com.darkinnit.cloakedhappiness.reference.Reference;
 import com.darkinnit.cloakedhappiness.utility.LogHelper;
@@ -12,6 +13,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.oredict.OreDictionary;
 
 /**
  * Created by darkinnit on 09/08/14.
@@ -31,11 +33,11 @@ public class cloakedhappiness {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        LogHelper.info("Passing suggested Configuration file:");
-        LogHelper.info(event.getSuggestedConfigurationFile());
+        LogHelper.debug("Passing suggested Configuration file:");
+        LogHelper.debug(event.getSuggestedConfigurationFile());
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
-        LogHelper.info("Pre Initialisation Complete!");
+        LogHelper.debug("Pre Initialisation Complete!");
 
         ModItems.init();
 
@@ -45,12 +47,18 @@ public class cloakedhappiness {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-        LogHelper.info("Initialisation Complete!");
+        Recipes.init();
+        LogHelper.debug("Initialisation Complete!");
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
-        LogHelper.info("Post Initialisation Complete!");
+        for (String oreName : OreDictionary.getOreNames())
+        {
+            LogHelper.info(oreName);
+            // OreDictionary.getOres(oreName);
+        }
+        LogHelper.debug("Post Initialisation Complete!");
     }
 }
