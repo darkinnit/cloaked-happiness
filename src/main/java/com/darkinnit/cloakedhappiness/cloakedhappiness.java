@@ -1,5 +1,6 @@
 package com.darkinnit.cloakedhappiness;
 
+import com.darkinnit.cloakedhappiness.client.handler.KeyInputEventHandler;
 import com.darkinnit.cloakedhappiness.handler.ConfigurationHandler;
 import com.darkinnit.cloakedhappiness.init.ModBlocks;
 import com.darkinnit.cloakedhappiness.init.ModItems;
@@ -37,17 +38,21 @@ public class cloakedhappiness {
         LogHelper.debug(event.getSuggestedConfigurationFile());
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
-        LogHelper.debug("Pre Initialisation Complete!");
+
+        proxy.registerKeyBindings();
 
         ModItems.init();
 
         ModBlocks.init();
+
+        LogHelper.debug("Pre Initialisation Complete!");
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
         Recipes.init();
+        FMLCommonHandler.instance().bus().register(new KeyInputEventHandler());
         LogHelper.debug("Initialisation Complete!");
     }
 

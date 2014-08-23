@@ -2,3 +2,7 @@ item.cloakedhappiness:cupOfTea.name=Cup Of Tea
 item.cloakedhappiness:doily.name=Doily
 tile.cloakedhappiness:crate.name=Crate
 itemGroup.cloakedhappiness=Cloaked Happiness
+
+keys.cloakedhappiness.category=Cloaked Happiness
+keys.cloakedhappiness.charge=Charge
+keys.cloakedhappiness.release=Release
